@@ -16,6 +16,9 @@
             <RowDefinition/>
             <RowDefinition Height=".5*"/>
         </Grid.RowDefinitions>
+        <Label Content="Enter a number:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" RenderTransformOrigin="0.213,-0.971"/>
+        <TextBlock x:Name="number" HorizontalAlignment="Left" Text="#" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="24" FontWeight="Bold" Margin="186,0,0,0" RenderTransformOrigin="25.504,0.413" Grid.Column="1"/>
+        <TextBox x:Name="numberTextBox" HorizontalAlignment="Left" Margin="10,44,0,0" Text="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="18" TextChanged="numberTextBox_TextChanged"/>
 
     </Grid>
 </Window>

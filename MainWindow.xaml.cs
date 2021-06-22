@@ -24,5 +24,10 @@ namespace ExperimentWithControls
         {
             InitializeComponent();
         }
+
+        private void numberTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            number.Text = numberTextBox.Text; //This line is copying the text input to the text box to the texblock in the right upper corner
+        }
     }
 }
