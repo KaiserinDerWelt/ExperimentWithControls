@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ExperimentWithControls
 {
@@ -28,6 +16,11 @@ namespace ExperimentWithControls
         private void numberTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             number.Text = numberTextBox.Text; //This line is copying the text input to the text box to the texblock in the right upper corner
+        }
+
+        private void numberTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e) //Method to accept only numbers in the text box
+        {
+            e.Handled = !int.TryParse(e.Text, out int result);
         }
     }
 }
