@@ -27,5 +27,40 @@ namespace ExperimentWithControls
         {
             number.Text = smallSlider.Value.ToString("0");
         }
+
+        private void bigSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e) //Big slider method, I get the method by double clicking on the control
+        {
+            number.Text = bigSlider.Value.ToString("000-000-0000");
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e) //Radio button  method
+        {
+            if (sender is RadioButton radioButton)
+            {
+                number.Text = radioButton.Content.ToString();
+            }
+        }
+
+        private void myListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (myListBox.SelectedItem is ListBoxItem listBoxItem)
+            {
+                number.Text = listBoxItem.Content.ToString();
+            }
+        }
+
+        private void readOnlyComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (readOnlyComboBox.SelectedItem is ListBoxItem listBoxItem)
+            {
+                number.Text = listBoxItem.Content.ToString();
+            }
+        }
+
+        private void editableComboBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (sender is ComboBox comboBox)
+                number.Text = comboBox.Text;
+        }
     }
 }
